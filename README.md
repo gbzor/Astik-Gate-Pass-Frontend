@@ -12,7 +12,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173.
+Open http://localhost:5173. The app opens on the login page.
 
 ## Project structure
 
@@ -23,6 +23,7 @@ src/
   api.js        Sends requests to the backend
   index.css     Global styles and design colours
   pages/        One component per page
+  components/   Pieces shared between pages
 ```
 
 ## Connecting to the backend
@@ -39,5 +40,5 @@ import { api } from '../api.js'
 const data = await api('/health')
 ```
 
-The home page calls `GET /api/health` and shows whether the backend answered. The backend
+The `/status` page calls `GET /api/health` and shows whether the backend answered. The backend
 needs that route to return a 200 status with a JSON body.
