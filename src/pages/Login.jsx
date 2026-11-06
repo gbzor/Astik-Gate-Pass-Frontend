@@ -1,19 +1,18 @@
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import BrandPanel from '../components/BrandPanel.jsx'
 import PasswordField from '../components/PasswordField.jsx'
 import './Auth.css'
 
 export default function Login() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [remember, setRemember] = useState(false)
-  const [message, setMessage] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
-  
-    setMessage('Sign-in is not connected to the server yet.')
+    navigate('/dashboard')
   }
 
   return (
@@ -65,12 +64,6 @@ export default function Login() {
               Forgot password?
             </Link>
           </div>
-
-          {message && (
-            <p className="form-message" role="status">
-              {message}
-            </p>
-          )}
 
           <button type="submit" className="btn btn-primary">
             Sign in

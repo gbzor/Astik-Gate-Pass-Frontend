@@ -1,4 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
+import StudentLayout from './components/StudentLayout.jsx'
+import Dashboard from './pages/Dashboard.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
@@ -11,6 +13,9 @@ export default function App() {
         <Route path="/register" element={<Register key="student" role="student" />} />
         <Route path="/register/faculty" element={<Register key="faculty" role="faculty" />} />
         <Route path="/status" element={<Home />} />
+        <Route element={<StudentLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>

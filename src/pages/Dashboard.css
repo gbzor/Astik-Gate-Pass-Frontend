@@ -1,0 +1,155 @@
+.dash-grid {
+  display: grid;
+  grid-template-columns: 450fr 369fr;
+  gap: 28px;
+}
+
+.dash-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.dash-card h2 {
+  margin: 0;
+  color: #1e2228;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dash-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dash-stat-value {
+  margin: 8px 0 0;
+  color: var(--primary);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.dash-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 20px;
+}
+
+.dash-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  padding: 0 20px;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  background: #fff;
+  color: #1e2228;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.dash-action::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.dash-action:hover {
+  background: var(--field-bg);
+}
+
+.dash-action-primary {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.dash-action-primary:hover {
+  background: var(--navy);
+}
+
+.dash-action:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.dash-reminders {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.dash-reminders h2 {
+  color: #fff;
+}
+
+.dash-reminders ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.dash-reminders .dash-empty {
+  color: #fff;
+}
+
+.dash-activity {
+  grid-column: 1 / -1;
+}
+
+.dash-activity li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 20px;
+}
+
+.dash-activity p {
+  margin: 0;
+}
+
+.dash-activity-title {
+  color: #1e2228;
+  font-size: 15px;
+}
+
+.dash-activity .dash-activity-date {
+  margin-top: 4px;
+  color: #5f6e85;
+  font-size: 13px;
+}
+
+.dash-status {
+  padding: 6px 16px;
+  border-radius: 16px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+}
+
+.dash-card .dash-empty {
+  margin: 20px 0 0;
+  color: #5f6e85;
+  font-size: 15px;
+}
+
+@media (max-width: 720px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
