@@ -8,7 +8,8 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register key="student" role="student" />} />
+        <Route path="/register/faculty" element={<Register key="faculty" role="faculty" />} />
         <Route path="/status" element={<Home />} />
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>

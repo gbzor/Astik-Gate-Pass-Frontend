@@ -6,17 +6,61 @@ import dotActive from '../assets/dot-active.svg'
 import dotInactive from '../assets/dot-inactive.svg'
 import './Auth.css'
 
-const PROGRAMS = ['BSIT']
-const YEAR_LEVELS = ['1st Year', '2nd Year', '3rd Year', '4th Year']
+const ROLES = {
+  student: {
+    path: '/register',
+    name: 'Student',
+    idLabel: 'Student ID number',
+    idPlaceholder: 'e.g. 2023-01234',
+    selects: [
+      {
+        name: 'program',
+        label: 'Program',
+        placeholder: 'Select program',
+        options: ['BSIT'],
+      },
+      {
+        name: 'yearLevel',
+        label: 'Year level',
+        placeholder: 'Select year',
+        options: ['1st Year', '2nd Year', '3rd Year', '4th Year'],
+      },
+    ],
+  },
+  faculty: {
+    path: '/register/faculty',
+    name: 'Faculty',
+    note: 'Faculty accounts are verified by the HR Office before activation.',
+    idLabel: 'Employee ID number',
+    idPlaceholder: 'e.g. FAC-2019-045',
+    selects: [
+      {
+        name: 'department',
+        label: 'Department',
+        placeholder: 'Select department',
+        options: ['College of Computer Studies'],
+      },
+      {
+        name: 'position',
+        label: 'Position',
+        placeholder: 'Select position',
+        options: ['Instructor', 'Assistant Professor', 'Associate Professor', 'Professor'],
+      },
+    ],
+  },
+}
 
-export default function Register() {
+export default function Register({ role }) {
+  const details = ROLES[role]
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
-    studentId: '',
+    idNumber: '',
     email: '',
     program: '',
     yearLevel: '',
+    department: '',
+    position: '',
     password: '',
     confirmPassword: '',
   })
@@ -52,16 +96,23 @@ export default function Register() {
           <div className="field">
             <p className="field-label">I am registering as</p>
             <div className="role-toggle">
-              <span className="role-option role-option-active" aria-current="true">
-                <img src={dotActive} alt="" width="8" height="8" />
-                Student
-              </span>
-              <Link className="role-option" to="/register/faculty">
-                <img src={dotInactive} alt="" width="8" height="8" />
-                Faculty
-              </Link>
+              {Object.entries(ROLES).map(([key, { path, name }]) =>
+                key === role ? (
+                  <span key={key} className="role-option role-option-active" aria-current="true">
+                    <img src={dotActive} alt="" width="8" height="8" />
+                    {name}
+                  </span>
+                ) : (
+                  <Link key={key} className="role-option" to={path}>
+                    <img src={dotInactive} alt="" width="8" height="8" />
+                    {name}
+                  </Link>
+                ),
+              )}
             </div>
           </div>
+
+          {details.note && <p className="form-note">{details.note}</p>}
 
           <div className="field-row">
             <div className="field">
@@ -95,14 +146,14 @@ export default function Register() {
           </div>
 
           <div className="field">
-            <label htmlFor="studentId">Student ID number</label>
+            <label htmlFor="idNumber">{details.idLabel}</label>
             <div className="input-box">
               <input
-                id="studentId"
-                name="studentId"
-                placeholder="e.g. 2023-01234"
+                id="idNumber"
+                name="idNumber"
+                placeholder={details.idPlaceholder}
                 required
-                value={form.studentId}
+                value={form.idNumber}
                 onChange={handleChange}
               />
             </div>
@@ -127,44 +178,27 @@ export default function Register() {
           </div>
 
           <div className="field-row">
-            <div className="field">
-              <label htmlFor="program">Program</label>
-              <div className="input-box select-box">
-                <select
-                  id="program"
-                  name="program"
-                  required
-                  value={form.program}
-                  onChange={handleChange}
-                >
-                  <option value="" disabled hidden>
-                    Select program
-                  </option>
-                  {PROGRAMS.map((program) => (
-                    <option key={program}>{program}</option>
-                  ))}
-                </select>
+            {details.selects.map(({ name, label, placeholder, options }) => (
+              <div className="field" key={name}>
+                <label htmlFor={name}>{label}</label>
+                <div className="input-box select-box">
+                  <select
+                    id={name}
+                    name={name}
+                    required
+                    value={form[name]}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled hidden>
+                      {placeholder}
+                    </option>
+                    {options.map((option) => (
+                      <option key={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="field">
-              <label htmlFor="yearLevel">Year level</label>
-              <div className="input-box select-box">
-                <select
-                  id="yearLevel"
-                  name="yearLevel"
-                  required
-                  value={form.yearLevel}
-                  onChange={handleChange}
-                >
-                  <option value="" disabled hidden>
-                    Select year
-                  </option>
-                  {YEAR_LEVELS.map((year) => (
-                    <option key={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="field-row">
@@ -219,7 +253,7 @@ export default function Register() {
           )}
 
           <button type="submit" className="btn btn-primary">
-            Create student account
+            Create {details.name.toLowerCase()} account
           </button>
 
           <p className="register">
