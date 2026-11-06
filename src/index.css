@@ -1,0 +1,23 @@
+:root {
+  --navy: #123b7a;
+  --primary: #174d97;
+  --gold: #c9a227;
+  --ink: #2d3e5c;
+  --muted: #6c788c;
+  --placeholder: #9aa5b6;
+  --border: #d5dce6;
+  --checkbox-border: #b8c1cf;
+  --field-bg: #f8fafd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-variation-settings: 'opsz' 14;
+}
