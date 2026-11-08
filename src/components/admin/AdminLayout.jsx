@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router";
-import { useAuth } from "../context/Authcontext";
+import { useAuth } from "../../context/AuthContext";
 import "./AdminLayout.css";
 
 const SEAL_URL = "https://www.adnu.edu.ph/wp-content/uploads/2014/03/AdNU-Seal-1.png";
@@ -15,7 +15,7 @@ export default function AdminLayout({ pageClass = "", children }) {
 
   return (
     <div className="layout">
-      <aside className="sidebar">
+      <aside className="admin-sidebar">
         <div className="brand">
           <img src={SEAL_URL} alt="Ateneo de Naga University seal" />
           <span>Astik GatePass</span>

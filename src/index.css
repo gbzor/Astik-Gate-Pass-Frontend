@@ -1,6 +1,8 @@
 :root {
   --navy: #123b7a;
   --primary: #174d97;
+  --blue: var(--primary);
+  --red: #a32244;
   --gold: #c9a227;
   --ink: #2d3e5c;
   --muted: #6c788c;

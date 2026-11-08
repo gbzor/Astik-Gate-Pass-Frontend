@@ -333,7 +333,7 @@
   border: 0;
   outline: 0;
   appearance: none;
-  background: url('../assets/chevron.svg') right 16px center no-repeat;
+  background: url('../../assets/chevron.svg') right 16px center no-repeat;
   color: var(--ink);
   font: inherit;
   font-size: 14px;

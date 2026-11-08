@@ -1,18 +1,19 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
-import StudentLayout from './components/StudentLayout.jsx'
-import Dashboard from './pages/Dashboard.jsx'
+import StudentLayout from './components/student/StudentLayout.jsx'
+import Dashboard from './pages/student/Dashboard.jsx'
+import VehicleRegistration from './pages/student/VehicleRegistration.jsx'
 import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Register from './pages/Register.jsx'
+import Login from './pages/auth/Login.jsx'
+import Register from './pages/auth/Register.jsx'
 
-import { AuthProvider } from './context/Authcontext'
-import ProtectedRoute from './components/Protectedroute'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/admin/ProtectedRoute'
 import AdminLogin from './pages/admin/login/AdminLogin'
-import Admindashboard from './pages/admin/dashboard/Admindashboard'
-import Adminapplicants from './pages/admin/applicants/Adminapplicants'
-import Adminapplicantdetails from './pages/admin/applicants/Adminapplicantdetails'
-import Adminrecords from './pages/admin/records/Adminrecords'
-import Adminrecorddetails from './pages/admin/records/Adminrecorddetails'
+import AdminDashboard from './pages/admin/dashboard/AdminDashboard'
+import AdminApplicants from './pages/admin/applicants/AdminApplicants'
+import AdminApplicantDetails from './pages/admin/applicants/AdminApplicantDetails'
+import AdminRecords from './pages/admin/records/AdminRecords'
+import AdminRecordDetails from './pages/admin/records/AdminRecordDetails'
 
 export default function App() {
   return (
@@ -26,17 +27,18 @@ export default function App() {
           <Route path="/status" element={<Home />} />
           <Route element={<StudentLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/vehicle-registration" element={<VehicleRegistration />} />
           </Route>
 
           {/* admin side */}
           <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/admin/dashboard" element={<Admindashboard />} />
-            <Route path="/admin/applicants" element={<Adminapplicants />} />
-            <Route path="/admin/applicants/:id" element={<Adminapplicantdetails />} />
-            <Route path="/admin/records" element={<Adminrecords />} />
-            <Route path="/admin/records/:id" element={<Adminrecorddetails />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/applicants" element={<AdminApplicants />} />
+            <Route path="/admin/applicants/:id" element={<AdminApplicantDetails />} />
+            <Route path="/admin/records" element={<AdminRecords />} />
+            <Route path="/admin/records/:id" element={<AdminRecordDetails />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/login" replace />} />
