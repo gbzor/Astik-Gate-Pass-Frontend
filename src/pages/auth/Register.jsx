@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
-import BrandPanel from '../components/BrandPanel.jsx'
-import PasswordField from '../components/PasswordField.jsx'
-import dotActive from '../assets/dot-active.svg'
-import dotInactive from '../assets/dot-inactive.svg'
+import BrandPanel from '../../components/auth/BrandPanel.jsx'
+import PasswordField from '../../components/auth/PasswordField.jsx'
+import dotActive from '../../assets/dot-active.svg'
+import dotInactive from '../../assets/dot-inactive.svg'
 import './Auth.css'
 
 const ROLES = {
