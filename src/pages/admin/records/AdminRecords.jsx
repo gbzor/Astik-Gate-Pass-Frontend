@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import AdminLayout from "../../../components/Adminlayout";
+import AdminLayout from "../../../components/admin/AdminLayout";
 import { getApplicants } from "../../../api";
-import { capitalize } from "../../../Utils";
-import "./Adminrecords.css";
+import { capitalize } from "../../../utils";
+import "./AdminRecords.css";
 
-export default function Adminrecords() {
+export default function AdminRecords() {
   const navigate = useNavigate();
   const [records, setRecords] = useState([]);
   const [query, setQuery] = useState("");

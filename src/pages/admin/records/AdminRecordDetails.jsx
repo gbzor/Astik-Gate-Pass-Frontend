@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import AdminLayout from "../../../components/Adminlayout";
-import { InfoSection, RequirementsSection } from "../../../components/Detailssection";
+import AdminLayout from "../../../components/admin/AdminLayout";
+import { InfoSection, RequirementsSection } from "../../../components/admin/DetailsSection";
 import { getApplicant } from "../../../api";
-import "./Adminrecorddetails.css";
+import "./AdminRecordDetails.css";
 
-export default function Adminrecorddetails() {
+export default function AdminRecordDetails() {
   const { id } = useParams();
   const [applicant, setApplicant] = useState(null);
   const [loading, setLoading] = useState(true);

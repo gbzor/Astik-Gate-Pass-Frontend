@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router";
-import { useAuth } from "../../../context/Authcontext";
+import { useAuth } from "../../../context/AuthContext";
 import "./AdminLogin.css";
 
 export default function AdminLogin() {

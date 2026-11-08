@@ -1,4 +1,4 @@
-import { MOCK_ADMIN_ACCOUNTS, MOCK_APPLICANTS } from "./Mockdata";
+import { MOCK_ADMIN_ACCOUNTS, MOCK_APPLICANTS } from "./mockData";
 export async function api(path, options) {
   const response = await fetch(`/api${path}`, options)
   if (!response.ok) throw new Error(`Request failed: ${response.status}`)

@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-.sidebar {
+.admin-sidebar {
   width: 270px;
   flex-shrink: 0;
   display: flex;
@@ -95,7 +95,7 @@
 @media (max-width: 900px) {
   .layout { flex-direction: column; }
 
-  .sidebar { width: 100%; padding: 24px 24px 28px; }
+  .admin-sidebar { width: 100%; padding: 24px 24px 28px; }
   .brand { margin-left: 0; }
   .nav { margin-top: 24px; flex-direction: row; flex-wrap: wrap; }
   .nav-btn { flex: 1; min-width: 110px; }
