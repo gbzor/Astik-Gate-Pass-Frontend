@@ -7,7 +7,7 @@ export default function Home() {
   useEffect(() => {
     api('/health')
       .then(() => setStatus('Connected to the backend.'))
-      .catch(() => setStatus('Cannot reach the backend. Is it running on port 5000?'))
+      .catch(() => setStatus('Cannot reach the backend. Is it running on port 3000?'))
   }, [])
 
   return (
