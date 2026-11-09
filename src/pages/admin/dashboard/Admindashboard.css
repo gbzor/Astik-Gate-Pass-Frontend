@@ -1,3 +1,12 @@
+.page-dashboard h1,
+.page-dashboard h2,
+.page-dashboard h3,
+.page-dashboard p,
+.page-dashboard ul {
+  margin: 0;
+  padding: 0;
+}
+
 .page-dashboard .topbar {
   display: flex;
   align-items: center;
@@ -40,10 +49,10 @@
 }
 
 .page-dashboard .stats {
-  margin-top: 36px;
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
-  gap: 36px;
+  gap: 24px;
   padding-left: 2px;
 }
 
@@ -51,43 +60,43 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 214px;
-  height: 120px;
-  padding: 12px 14px 10px 12px;
+  width: 190px;
+  height: 96px;
+  padding: 10px 12px;
   color: #fff;
   background: var(--blue);
   border: 1px solid #111;
-  border-radius: 14px;
-  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.16);
 }
 
 .page-dashboard .stat h2 {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1.1;
 }
 .page-dashboard .stat p {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1;
   text-align: center;
 }
 .page-dashboard .stat-text { flex: 1; }
 .page-dashboard .stat .icon {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .page-dashboard .stat-total {
-  width: 240px;
+  width: 210px;
   justify-content: center;
   margin-left: 12px;
   text-align: center;
 }
-.page-dashboard .stat-total h2 { font-size: 20px; }
+.page-dashboard .stat-total h2 { font-size: 18px; }
 
 .page-dashboard .activity {
   flex: 1;
