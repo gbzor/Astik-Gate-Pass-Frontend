@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet } from 'react-router'
-import seal from '../assets/seal.png'
+import seal from '../../assets/seal.png'
 import './StudentLayout.css'
 
 const NAV_ITEMS = [

@@ -22,8 +22,11 @@ src/
   App.jsx       Lists the routes (one <Route> per page)
   api.js        Sends requests to the backend
   index.css     Global styles and design colours
-  pages/        One component per page
-  components/   Pieces shared between pages
+  mockData.js   Sample data for the admin pages
+  utils.js      Text and date helpers
+  context/      Sign-in state shared across the admin pages
+  components/   Shared pieces, grouped into admin/, auth/ and student/
+  pages/        One component per page, grouped into admin/, auth/ and student/
 ```
 
 ## Connecting to the backend

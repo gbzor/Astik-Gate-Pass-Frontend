@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AdminLayout from "../../../components/AdminLayout";
+import AdminLayout from "../../../components/admin/AdminLayout";
 import { useAuth } from "../../../context/AuthContext";
 import { getApplicants } from "../../../api";
 import { formatDateTime } from "../../../utils";
