@@ -1,4 +1,4 @@
-import seal from '../assets/seal.png'
+import seal from '../../assets/seal.png'
 
 export default function BrandPanel({ text }) {
   return (

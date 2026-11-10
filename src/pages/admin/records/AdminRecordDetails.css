@@ -1,0 +1,30 @@
+.record-details-page .person { display: flex; align-items: center; gap: 18px; }
+.record-details-page .avatar { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; background: #d9d9d9; }
+.record-details-page .person-text strong { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; }
+
+.record-details-page .block { margin-top: 32px; padding-left: 12px; }
+.record-details-page .block h2 { font-size: 16px; font-weight: 700; letter-spacing: 0.08em; }
+.record-details-page .grid {
+  margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr;
+  column-gap: 60px; row-gap: 16px; padding-left: 16px;
+}
+.record-details-page .item { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.record-details-page .label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: #b4bccb; }
+.record-details-page .value { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; overflow-wrap: anywhere; }
+.record-details-page .value-link { text-decoration: underline; }
+.record-details-page .req-title { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; }
+.record-details-page .req-link { width: fit-content; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #0000ee; text-decoration: none; }
+.record-details-page .req-link:hover { text-decoration: underline; }
+
+.record-details-page .back {
+  align-self: flex-start; display: flex; align-items: center; justify-content: center;
+  width: 88px; height: 34px; margin-top: 36px; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.08em; color: #fff; text-decoration: none; background: var(--blue);
+  border: 1px solid #111; border-radius: 6px; transition: filter 0.15s;
+}
+.record-details-page .back:hover { filter: brightness(1.12); }
+
+@media (max-width: 900px) {
+  .record-details-page .block { padding-left: 0; }
+  .record-details-page .grid { grid-template-columns: 1fr; padding-left: 0; }
+}
