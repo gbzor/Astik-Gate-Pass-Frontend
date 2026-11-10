@@ -19,7 +19,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-export default function Admindashboard() {
+export default function AdminDashboard() {
   const { user } = useAuth();
   const [applicants, setApplicants] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,8 +35,6 @@ export default function Admindashboard() {
   const total = applicants.length;
   const approved = applicants.filter((a) => a.status === "approved").length;
   const pending = applicants.filter((a) => a.status === "pending").length;
-
-  // newest decisions first, last 10
   const activity = applicants
     .filter((a) => a.status !== "pending" && a.decidedAt)
     .sort((a, b) => new Date(b.decidedAt) - new Date(a.decidedAt))
