@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import AdminLayout from "../../../components/Adminlayout";
-import { useAuth } from "../../../context/Authcontext";
+import AdminLayout from "../../../components/AdminLayout";
+import { useAuth } from "../../../context/AuthContext";
 import { getApplicants } from "../../../api";
-import { formatDateTime } from "../../../Utils";
-import "./Admindashboard.css";
+import { formatDateTime } from "../../../utils";
+import "./AdminDashboard.css";
 
 const ClockIcon = () => (
   <svg className="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
